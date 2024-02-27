@@ -5,9 +5,18 @@ import List from "./app/screens/Infos";
 import { useEffect, useState } from "react";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { FIREBASE_AUTH } from "./FirebaseConfig";
+import ForgotPassword from "./app/screens/ForgotPassword";
 
-const Stack = createNativeStackNavigator();
 const InsideStack = createNativeStackNavigator();
+
+export type AppStackParamList = {
+  Inside: undefined;
+  Login: undefined;
+  ForgotPassword: undefined;
+};
+
+const Stack = createNativeStackNavigator<AppStackParamList>();
+
 function InsideLayout() {
   return (
     <InsideStack.Navigator>
@@ -40,6 +49,14 @@ export default function App() {
             options={{ headerShown: false }}
           />
         )}
+        <Stack.Screen
+          name="ForgotPassword"
+          component={ForgotPassword}
+          options={{
+            headerShown: true,
+            title: "Recuperação de senha",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

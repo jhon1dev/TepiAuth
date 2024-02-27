@@ -7,7 +7,7 @@ interface RouterProps {
   navigation: NavigationProp<any, any>;
 }
 
-const List = ({ navigation }: RouterProps) => {
+const Infos = ({ navigation }: RouterProps) => {
   return (
     <ImageBackground
       source={require('/assets/background.jpg')}
@@ -23,7 +23,7 @@ const List = ({ navigation }: RouterProps) => {
   );
 };
 
-export default List;
+export default Infos;
 
 const styles = StyleSheet.create({
   backgroundImage: {
